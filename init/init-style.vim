@@ -19,6 +19,9 @@ set laststatus=2
 " 总是显示行号
 set number
 
+" 相对行号
+set relativenumber
+
 " 总是显示侧边栏（用于显示 mark/gitdiff/诊断信息）
 set signcolumn=yes
 
@@ -38,6 +41,8 @@ set showcmd
 " 水平切割窗口时，默认在右边显示新窗口
 set splitright
 
+" 窗口大小
+set lines=40 columns=170
 
 "----------------------------------------------------------------------
 " 颜色主题：色彩文件位于 colors 目录中
@@ -287,5 +292,24 @@ set tabline=%!Vim_NeatTabLine()
 set guitablabel=%{Vim_NeatGuiTabLabel()}
 set guitabtooltip=%{Vim_NeatGuiTabTip()}
 
+
+
+"----------------------------------------------------------------------
+" 不同模块下光标的形状与颜色
+" Set cursor shape and color
+"----------------------------------------------------------------------
+" INSERT mode
+let &t_SI = "\<Esc>[5 q"
+" REPLACE mode
+let &t_SR = "\<Esc>[3 q" . "\<Esc>]12;red\x7"
+" NORMAL mode
+let &t_EI = "\<Esc>[1 q" . "\<Esc>]12;green\x7"
+
+" 1 -> blinking block  闪烁的方块
+" 2 -> solid block  不闪烁的方块
+" 3 -> blinking underscore  闪烁的下划线
+" 4 -> solid underscore  不闪烁的下划线
+" 5 -> blinking vertical bar  闪烁的竖线
+" 6 -> solid vertical bar  不闪烁的竖线
 
 

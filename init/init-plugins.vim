@@ -156,7 +156,8 @@ if index(g:bundle_group, 'enhanced') >= 0
 	Plug 'junegunn/fzf'
 
 	" 给不同语言提供字典补全，插入模式下 c-x c-k 触发
-	Plug 'asins/vim-dict'
+	"  Plug 'asins/vim-dict'
+	Plug 'skywind3000/vim-dict'
 
 	" 使用 :FlyGrep 命令进行实时 grep
 	Plug 'wsdjeg/FlyGrep.vim'
@@ -170,6 +171,25 @@ if index(g:bundle_group, 'enhanced') >= 0
 	" 提供 gist 接口
 	Plug 'lambdalisue/vim-gista', { 'on': 'Gista' }
 	
+	" 实时格式化代码
+	Plug 'skywind3000/vim-rt-format', { 'do': 'pip3 install autopep8' }
+
+	" 自动补全
+	Plug 'skywind3000/vim-auto-popmenu'
+
+	" enable this plugin for filetypes, '*' for all files.
+	let g:apc_enable_ft = {'*': 1}
+
+	" source for dictionary, current or other loaded buffers, see ':help cpt'
+	set cpt=.,k,w,b
+
+	" don't select the first item.
+	set completeopt=menu,menuone,noselect
+
+	" suppress annoy messages.
+	set shortmess+=c
+
+
 	" ALT_+/- 用于按分隔符扩大缩小 v 选区
 	map <m-=> <Plug>(expand_region_expand)
 	map <m--> <Plug>(expand_region_shrink)
