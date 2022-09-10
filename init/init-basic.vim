@@ -62,16 +62,34 @@ set incsearch
 "----------------------------------------------------------------------
 " 编码设置
 "----------------------------------------------------------------------
-if has('multi_byte')
-	" 内部工作编码
-	set encoding=utf-8
+" if has('multi_byte')
+" 	" 内部工作编码
+" 	set encoding=utf-8
+" 
+" 	" 文件默认编码
+" 	set fileencoding=utf-8
+" 
+" 	" 打开文件时自动尝试下面顺序的编码
+" 	set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
+" endif
 
-	" 文件默认编码
-	set fileencoding=utf-8
+" 内部工作编码
+set encoding=utf-8
 
-	" 打开文件时自动尝试下面顺序的编码
-	set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
-endif
+" 文件默认编码
+set fileencoding=utf-8
+" consle
+"set termencoding=utf-8,gbk,latin1
+
+" 打开文件时自动尝试下面顺序的编码
+set fileencodings=ucs-bom,utf-8,gbk,gb18030,big5,euc-jp,latin1
+
+
+" 解决菜单乱码
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+" 解决 consle 输出乱码
+language messages zh_CN.utf-8
 
 
 "----------------------------------------------------------------------
